@@ -6,12 +6,12 @@ import retrofit2.http.Path
 
 interface CountryApi {
 
-    @GET("countries/v5")
+    @GET("countries/v5?limit=100")
     suspend fun getAllCountries(
         @Header("Authorization") authorization: String
     ): CountryResponse
 
-    @GET("countries/v5/region/{region}")
+    @GET("countries/v5/region/{region}?limit=100")
     suspend fun getCountriesByRegion(
         @Path("region") region: String,
         @Header("Authorization") authorization: String
